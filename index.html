@@ -1,534 +1,253 @@
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #1a5f7a;
-            --secondary: #57cc99;
-            --accent: #ffd166;
-            --dark: #184d47;
-            --light: #f8f9fa;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            /* background: linear-gradient(rgba(26, 95, 122, 0.9), rgba(26, 95, 122, 0.7)), url('https://images.unsplash.com/photo-1559666126-84d0e0a053eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');*/
-            background-image: url(https://cdn.pixabay.com/photo/2017/06/01/12/11/tree-2363346_640.jpg);
-            background-size: cover; 
-            background-position: center;
-            color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(26, 95, 122, 0.9);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 15px 50px;
-            background-color: var(--primary);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-           
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            max-width: 700px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Gilgit-Baltistan</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-mountain"></i>
+                Gilgit-Baltistan
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
         
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--accent);
-            color: var(--dark);
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* About Section */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Destinations Section */
-        .destinations {
-            background-color: var(--light);
-        }
-
-        .destination-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .destination-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .destination-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card-image {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .destination-card:hover .card-image img {
-            transform: scale(1.1);
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .card-content p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-
-        .card-content .btn {
-            padding: 8px 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Culture Section */
-        .culture-content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .culture-item {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .culture-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .culture-text {
-            flex: 1;
-        }
-
-        .culture-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        .culture-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .culture-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            background-color: var(--light);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-item {
-            border-radius: 8px;
-            overflow: hidden;
-            height: 250px;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 95, 122, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay i {
-            color: white;
-            font-size: 2rem;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            gap: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--primary);
-            width: 20px;
-        }
-
-        .contact-form {
-            flex: 1;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-
-        .footer-column {
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--secondary);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content, .culture-item, .contact-content {
-                flex-direction: column;
-            }
-            
-            .culture-item:nth-child(even) {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-wrap: wrap;
-            }
-            
-            .footer-column {
-                flex: 0 0 50%;
-                margin-bottom: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .footer-column {
-                flex: 0 0 100%;
-            }
-        }
+        <div class="hero-content">
+            <h1>Discover Gilgit-Baltistan</h1>
+            <p>Heaven on Earth - Explore the majestic mountains, crystal clear lakes, and rich cultural heritage of Pakistan's northern paradise.</p>
+            <a href="#destinations" class="btn">Explore Now</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Gilgit-Baltistan</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Crown Jewel of Pakistan</h3>
+                    <p>Gilgit-Baltistan, formerly known as the Northern Areas, is a region of breathtaking natural beauty located in the northern part of Pakistan. It borders Azad Kashmir to the south, the province of Khyber Pakhtunkhwa to the west, Afghanistan to the north, China to the northeast, and the Indian-administered region of Jammu and Kashmir to the southeast.</p>
+                    <p>Home to some of the world's highest mountains, including K2 (the second highest peak on Earth), the region is often called the "Paradise on Earth" for its stunning landscapes, diverse cultures, and warm hospitality.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://cdn.pixabay.com/photo/2020/07/13/08/10/nature-5399941_640.jpg" alt="Gilgit-Baltistan Landscape">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="section destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Destinations</h2>
+            </div>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://cdn.pixabay.com/photo/2020/12/09/21/25/landscape-5818680_640.jpg" alt="Hunza Valley">
+                    </div>
+                    <div class="card-content">
+                        <h3>Hunza Valley</h3>
+                        <p>Famous for its breathtaking scenery, friendly people, and ancient forts. The valley offers stunning views of Rakaposhi and Ultar Sar peaks.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://cdn.pixabay.com/photo/2021/02/16/07/25/shangrila-6020076_640.jpg" alt="Skardu">
+                    </div>
+                    <div class="card-content">
+                        <h3>Skardu</h3>
+                        <p>Gateway to the world's highest peaks, Skardu is the starting point for expeditions to K2 and other giants of the Karakoram range.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fairy Meadows">
+                    </div>
+                    <div class="card-content">
+                        <h3>Fairy Meadows</h3>
+                        <p>A beautiful grassland near the base camp of Nanga Parbat, offering one of the most spectacular views of the mountain.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Culture & Heritage</h2>
+            </div>
+            <div class="culture-content">
+                <div class="culture-item">
+                    <div class="culture-text">
+                        <h3>Rich Cultural Diversity</h3>
+                        <p>Gilgit-Baltistan is home to diverse ethnic groups including Baltis, Shinas, Brushos, and Wakhi people, each with their own unique languages, traditions, and festivals. The region celebrates various cultural events throughout the year, showcasing traditional music, dance, and cuisine.</p>
+                    </div>
+                    <div class="culture-image">
+                        <img src="https://media.istockphoto.com/id/1162882368/photo/group-of-people-in-the-gulmit-village-gilgit-baltistan-region-of-pakistan.jpg?s=612x612&w=0&k=20&c=dp2N1QjemPxkdlCChCsxtqh_Ogz6fw7O6PSQtGEvgj4=" alt="Cultural Festival">
+                    </div>
+                </div>
+                
+                <div class="culture-item">
+                    <div class="culture-text">
+                        <h3>Traditional Cuisine</h3>
+                        <p>The local cuisine of Gilgit-Baltistan is as diverse as its landscape. From hearty meat dishes to unique breads and dairy products, the food reflects the region's harsh climate and nomadic heritage. Must-try dishes include Chapshuro, Harissa, and locally dried fruits.</p>
+                    </div>
+                    <div class="culture-image">
+                        <img src="https://visitinpakistan.com/wp-content/uploads/2023/04/Taste-of-Pakistan-A-Delicious-Local-Food-Tour-to-Gilgit-Baltistan-2.jpg" alt="Local Cuisine">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Photo Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://cdn.pixabay.com/photo/2020/10/11/09/04/peak-5645235_640.jpg" alt="Mountain Landscape">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/06/01/12/11/tree-2363346_640.jpg" alt="Attabad Lake">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.pixabay.com/photo/2020/10/26/18/48/nature-5688284_640.jpg" alt="Local Village">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://media.istockphoto.com/id/1601394541/photo/karakuram-highway-along-the-mighty-indus.jpg?s=612x612&w=0&k=20&c=Kgnsm7wMllIVpuXttAfmOFgT5YFfYDhjnvgoKtW5PJU=" alt="Karakoram Highway">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Gilgit-Baltistan Tourism </p>
+                    <p><i class="fas fa-phone"></i> +92 3109206626</p>
+                    <p><i class="fas fa-envelope"></i> kamaluddincodes@gmil.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 5:00 PM</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Enter subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Gilgit-Baltistan</h3>
+                    <p>Discover the majestic beauty of Pakistan's northern paradise. From towering peaks to serene valleys, experience nature at its finest.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Hunza Valley</a></li>
+                        <li><a href="#">Skardu</a></li>
+                        <li><a href="#">Fairy Meadows</a></li>
+                        <li><a href="#">Naltar Valley</a></li>
+                        <li><a href="#">Deosai Plains</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest travel updates and offers.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Gilgit-Baltistan Tourism. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
